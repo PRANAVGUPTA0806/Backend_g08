@@ -1,6 +1,6 @@
 // create a database chitkara and 3 document in it user ,student and faculty with at least 5 data in it 
 //user and student should have name ,age,subject and marks and faculty should have name ,age,subject and rating
-const user=[{
+const user=db.student.insertMany([{
     "name":"Pranav8",
     "age":19,
     "subject":"fee",
@@ -25,7 +25,7 @@ const user=[{
     "age":19,
     "subject":"bee",
     "marks:" :99,
-}]
+}])
 
 //task 
 // find one with  key
