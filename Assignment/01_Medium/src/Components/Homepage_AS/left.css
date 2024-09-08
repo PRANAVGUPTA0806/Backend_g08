@@ -1,0 +1,94 @@
+.left {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    padding-left: 35px;
+    position: fixed;
+    top: 0;
+    border-right: 0.05px solid #e6e6e6;
+    width: 87px;
+    height: 100vh;
+}
+
+.left > div {
+    justify-content: space-between;
+}
+
+.mid {
+    display: flex;
+    flex-direction: column;
+    margin-left: -0.5vw;
+    margin-top: 11.3vh;
+}
+
+img {
+    cursor: pointer;
+}
+
+.tem1 {
+    width: 1.78vw;
+    height: 7vh;
+    margin-top: 2vh;
+}
+
+.tem1 > img {
+    width: 100%;
+    height: 100%;
+}
+
+.tem0 {
+    margin-top: -11vh;
+    margin-bottom: 15vh;
+    position: relative;
+    left: -2vh;
+}
+
+/* Responsive CSS for smaller screens */
+@media (max-width: 768px) {
+    .left {
+        width: 70px;
+        padding-left: 20px;
+    }
+
+    .tem1 {
+        width: 6vw;
+        height: 6vh;
+        margin-top: 1.5vh;
+    }
+
+    .mid {
+        margin-left: 0;
+        margin-top: 9vh;
+    }
+
+    .tem0 {
+        margin-top: -9vh;
+        margin-bottom: 10vh;
+        left: -1vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .left {
+        width: 60px;
+        padding-left: 10px;
+    }
+
+    .tem1 {
+        width: 8vw;
+        height: 5vh;
+        margin-top: 1vh;
+    }
+
+    .mid {
+        margin-top: 8vh;
+    }
+
+    .tem0 {
+        margin-top: -8vh;
+        margin-bottom: 8vh;
+        left: -0.5vh;
+    }
+}

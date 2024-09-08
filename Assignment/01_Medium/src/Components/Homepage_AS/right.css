@@ -1,0 +1,105 @@
+.right {
+    width: 376px;
+    height: 100%;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 40px;
+    border-left: 1px solid #e6e6e6;
+}
+
+.right > div > button {
+    background-color: black;
+    color: white;
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 40px auto;
+}
+
+#search {
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    border: 0.5px solid #e6e6e6;
+    outline: none;
+    padding-left: 30px;
+    margin: 40px auto;
+}
+
+.topic {
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.li-tag {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 16px;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Responsive CSS for tablets */
+@media (max-width: 1024px) {
+    .right {
+        width: 300px;
+        right: 20px;
+    }
+
+    .right > div > button, #search {
+        width: 250px;
+        margin-left: 20px;
+    }
+
+    .topic {
+        margin-left: 20px;
+    }
+}
+
+/* Responsive CSS for mobile */
+@media (max-width: 768px) {
+    .right {
+        width: 250px;
+        right: 10px;
+    }
+
+    .right > div > button, #search {
+        width: 200px;
+        margin-left: 10px;
+    }
+
+    .topic {
+        margin-left: 10px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .right {
+        width: 100%;
+        position: relative;
+        right: 0;
+        padding: 15px;
+        border-left: none;
+    }
+
+    .right > div > button, #search {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .topic {
+        margin-left: 0;
+    }
+
+    .li-tag {
+        margin-left: 0;
+    }
+}
