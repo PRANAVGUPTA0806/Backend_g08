@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 // Database Connection with MongoDB
-mongoose.connect("mongodb+srv://pranavguptakuna08:pranav08@cluster0.d673c.mongodb.net/reelbite", {
+mongoose.connect("", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
