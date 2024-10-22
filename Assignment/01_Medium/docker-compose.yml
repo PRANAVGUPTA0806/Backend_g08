@@ -1,0 +1,67 @@
+version: '3'
+services:
+  # Backend Service (Node.js/Express)
+  backend:
+    build:
+      context: ./backend   # Point to the Dockerfile in the backend folder
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "5000:5000"        # Expose port 8000 for the backend
+    volumes:
+      - ./backend:/app
+
+  # Frontend Service (React)
+  frontend:
+    build:
+      context: ./frontend   # Point to the Dockerfile in the frontend folder
+      dockerfile: frontend.Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:3000"           # Map port 80 (Nginx) to port 3000 for development
+    depends_on:
+      - backend             # Ensure backend starts before the frontend
+    volumes:
+      - ./frontend:/app
+
+# version: '3'
+# services:
+#   # MongoDB Service
+#   mongo:
+#     image: mongo        # Use the official MongoDB image
+#     container_name: mongo
+#     ports:
+#       - "27017:27017"   # Expose MongoDB's default port
+#     volumes:
+#       - ./data:/data/db # Optional: Persist data on the host machine
+#     environment:
+#       MONGO_INITDB_ROOT_USERNAME: root
+#       MONGO_INITDB_ROOT_PASSWORD: example
+
+#   # Backend Service (Node.js/Express)
+#   backend:
+#     build:
+#       context: ./backend   # Point to the Dockerfile in the backend folder
+#       dockerfile: Dockerfile
+#     container_name: backend
+#     ports:
+#       - "8000:8000"        # Expose port 5000 for the backend
+#     environment:
+#       MONGO_URI: mongodb://localhost:27017/pranav # Link to MongoDB
+#     depends_on:
+#       - mongo               # Ensure MongoDB starts before the backend
+#     volumes:
+#       - ./backend:/app
+
+#   # Frontend Service (React)
+#   frontend:
+#     build:
+#       context: ./frontend   # Point to the Dockerfile in the frontend folder
+#       dockerfile: frontend.Dockerfile
+#     container_name: frontend
+#     ports:
+#       - "3000:80"           # Map port 80 (Nginx) to port 3000 for development
+#     depends_on:
+#       - backend             # Ensure backend starts before the frontend
+#     volumes:
+#       - ./frontend:/app
