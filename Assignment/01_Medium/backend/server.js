@@ -10,6 +10,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 app.use(errorHandler);
+app.set('view engine','hbs');
 
 
 app.get('/', (req, res) => {
