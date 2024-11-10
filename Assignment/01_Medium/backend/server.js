@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const asyncHandler = require('express-async-handler');
 const bcrypt = require('bcrypt');
 const multer = require("multer");
+const jwt = require("jsonwebtoken"); 
 
 connectDb();
 const app = express();
