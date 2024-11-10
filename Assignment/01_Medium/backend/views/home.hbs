@@ -4,13 +4,45 @@
     <title>{{title}}</title>
 </head>
 <body>
-     {{> _navbar}}
-
+    {{> _navbar}}
     <h1>{{message}}</h1>
     <p>User Information:</p>
     <ul>
         <li>Name: {{user.name}}</li>
         <li>Age: {{user.age}}</li>
     </ul>
+    
+    <div>
+        <form action="/profiles" method="post" enctype="multipart/form-data">
+            <input type="file" name="avatars" multiple> <!-- Allows multiple file uploads -->
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+
+    <!-- Display single image upload if imageUrl exists -->
+    {{#if imageUrl}}
+    <div>
+        <h2>Your Uploaded Image</h2>
+        <a href="{{imageUrl}}" target="_blank">
+            <img src="{{imageUrl}}" alt="Uploaded Avatar" style="max-width: 200px;">
+        </a>
+    </div>
+    {{/if}}
+
+    <!-- Display multiple image uploads if imageUrls array exists -->
+    {{#if imageUrls}}
+    <div>
+        <h2>Your Uploaded Images</h2>
+        <ul>
+            {{#each imageUrls}}
+            <li>
+                <a href="{{this}}" target="_blank">
+                    <img src="{{this}}" alt="Uploaded Avatar" style="max-width: 200px;">
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/if}}
 </body>
 </html>
